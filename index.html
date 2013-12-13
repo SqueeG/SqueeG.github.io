@@ -1,65 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Squeeg.github.io by SqueeG</title>
+    <title>Simple Tome Class LaTEX generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/yeti.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Squeeg.github.io</h1>
-        <p>GHP Test</p>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">TRD : tools</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"></button>
+        </div>
+      </div>
+    </nav>
 
-
-        <p class="view"><a href="https://github.com/SqueeG">View My GitHub Profile</a></p>
-
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <div class="container">
+      <div class="page-header" id="banner">
+      <div class="row">
+        <div class="col-lg-6">
+        <h1>TC<sup>2</sup></h1>
+        <p class="lead">Tome class table creator</p>
+        </div>
+      </div>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    <div class="row">
+      <div class="col-lg-20">
+        <div class="well">
+          <form class="bs-example form-horizontal">
+          <fieldset>
+            <legend>Let's Start!</legend>
+            <div class="form-group">
+              <label for="classentry" class="col-sm-1 control-label">Class Name</label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="classentry" placeholder="Class Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bab" class="col-xs-1 control-label">BAB</label>
+                        <div class="col-md-1">
+                          <select class="form-control" id="bab" name=2>
+                            <option value=''>---</option>
+                            <option value='goodbab'>good</option>
+                            <option value='modebab'>medium</option>
+                            <option value='poorbab'>bad</option>
+                          </select>
+                        </div>
+
+                        <label for="for" class="col-xs-1 control-label">Fort Save</label>
+                        <div class="col-md-1">
+                          <select class="form-control" id="for" name=3>
+                            <option value=''>---</option>
+                            <option value="goodfor">good</option>
+                            <option value="poorfor">bad</option>
+                          </select>
+                        </div>
+                        <label for="ref" class="col-xs-1 control-label">Ref Save</label>
+                        <div class="col-md-1">
+                          <select class="form-control" id="ref" name=4>
+                          <option value=''>---</option>
+                            <option value="goodref">good</option>
+                            <option value="poorref">bad</option>
+                          </select>
+                        </div>
+                        <label for="wil" class="col-xs-1 control-label">Will Save</label>
+                        <div class="col-md-1">
+                          <select class="form-control" id="wil" name=5>
+                            <option value=''>---</option>
+                            <option value="goodwil">good</option>
+                            <option value="poorwil">bad</option>
+                          </select>
+                        </div>
+                    </div>
+            <div class="form-group">
+              <label for="quot" class="col-sm-1 control-label">Quote</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" id="quot" placeholder='"Go for the eyes Boo! THE EYES!"'>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="desc" class="col-sm-1 control-label">Class Description</label>
+              <div class="col-lg-5">
+                <textarea class="form-control" rows="3" id="desc"></textarea>
+                <span class="help-block">Class description, you should write one, two... maybe three paragraphs even.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="playingaclass" class="col-sm-1 control-label">Playing the Class</label>
+              <div class="col-lg-5">
+                <textarea class="form-control" rows="3" id="playingaclass"></textarea>
+                <span class="help-block">Brief advice on how to play the class should go here</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="alignment" class="col-sm-1 control-label">Alignment restrictions</label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="alignment" placeholder="Derp.">
+                <span class="help-block">Not suggested</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="races" class="col-sm-1 control-label">Race restrictions</label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="races" placeholder="What do you mean I can't play this?">
+                <span class="help-block">Not suggested</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="startinggold" class="col-sm-1 control-label">Starting Gold</label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="startinggold" placeholder="All teh muneez">
+                <span class="help-block">e.g : "gold6d4x10 gp (150 gold)"</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hitdie" class="col-sm-1 control-label">Hit Die (HD)</label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="hitdie" placeholder="d12s all around!">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="classskills" class="col-sm-1 control-label">Class Skills</label>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="classskills" placeholder="To be replaced with a checklist... eventually">
+                <span class="help-block">Brief advice on how to play the class should go here</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="skillpoints" class="col-sm-1 control-label">Skill Points</label>
+              <div class="col-md-1">
+                <input type="text" class="form-control" id="skillpoints" placeholder="0">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="texout" class="col-lg-2 control-label">LaTEX output</label>
+              <div class="col-lg-5">
+                <textarea class="form-control" rows="3" id="texout"></textarea>
+                <span class="help-block">Copy and paste this into a .tex file</span>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/autosize.min.js"></script>
+    <script src="base-class.js"></script>
   </body>
 </html>
