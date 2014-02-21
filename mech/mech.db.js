@@ -53,14 +53,14 @@ tgdMech.mechSize = {    // mech size : step 2
     "cm5" : "City-mech E" , //12
     "cm6" : "City-mech F"   //13
 };
-
+/*
 tgdMech.mechHD = [      // determine hd : step 3
-    { "lrg" : [   6, 0, 6, 4, 5 ] },
-    { "hug" : [   12, 10, 12, 8, 10 ] },
-    { "ggt" : [   24, 20, 24, 16, 20 ] },
-    { "cl1" : [   48, 40, 48, 32, 40 ] },
-    { "cl2" : [   96, 80, 96, 64, 80 ] },
-    { "cl3" : [   144, 120, 144, 96, 120 ] },
+    { "lrg" : [   6, 0, 6, 4, 5           ] },
+    { "hug" : [   12, 10, 12, 8, 10       ] },
+    { "ggt" : [   24, 20, 24, 16, 20      ] },
+    { "cl1" : [   48, 40, 48, 32, 40      ] },
+    { "cl2" : [   96, 80, 96, 64, 80      ] },
+    { "cl3" : [   144, 120, 144, 96, 120  ] },
     { "cl4" : [   192, 160, 192, 128, 160 ] },
     { "cl5" : [   240, 200, 240, 160, 200 ] },
     { "cm1" : [   336, 280, 336, 224, 280 ] },
@@ -70,6 +70,23 @@ tgdMech.mechHD = [      // determine hd : step 3
     { "cm5" : [   718, 580, 718, 580, 580 ] },
     { "cm6" : [   814, 660, 814, 644, 660 ] }
 ];
+*/
+tgdMech.mechHD = {      // determine hd : step 3
+    "lrg" : [   6, 0, 6, 4, 5           ],
+    "hug" : [   12, 10, 12, 8, 10       ],
+    "ggt" : [   24, 20, 24, 16, 20      ],
+    "cl1" : [   48, 40, 48, 32, 40      ],
+    "cl2" : [   96, 80, 96, 64, 80      ],
+    "cl3" : [   144, 120, 144, 96, 120  ],
+    "cl4" : [   192, 160, 192, 128, 160 ],
+    "cl5" : [   240, 200, 240, 160, 200 ],
+    "cm1" : [   336, 280, 336, 224, 280 ],
+    "cm2" : [   432, 340, 432, 288, 340 ],
+    "cm3" : [   528, 420, 528, 352, 420 ],
+    "cm4" : [   624, 500, 624, 416, 500 ],
+    "cm5" : [   718, 580, 718, 580, 580 ],
+    "cm6" : [   814, 660, 814, 644, 660 ]
+};
 
 tgdMech.mechSpeed = [   // determine speed : step 4 [ ft, mph ]
     [ 30, 3 ],    //1
@@ -254,7 +271,7 @@ tgdMech.numCrew = { // %
     "clock" : 10,
     "animat": 10,
     "undead": 0 //only one crewman, the controlling necromancer
-}
+};
 
 // step 15 : determine PU w/ firing ports
 // %% of PU crew with access to ports
@@ -288,13 +305,13 @@ tgdMech.craftDC = { // days = (DC * 2) - designer's mechcraft ranks
 //
 // based on gp : 1/10 gp = 1 silver
 tgdMech.laborContribution = {   // daily wage, daily man-hours, qualifications
-    "average"       : [ .10, 8, "Any able-bodied laborer" ],
+    "average"       : [ 0.10, 8, "Any able-bodied laborer" ],
     "above-average" : [ 1, 10, "5+ ranks in Prof(engineer) -or- similar skill"],
     "skilled"       : [ 2, 12, "10+ ranks" ],
     "expert"        : [ 3, 14, "15+ ranks"],
     "zombie/skeleton":[ 0, 12, "Any mindless undead" ], // half productivity but actually work 24h/day
     "construct"     : [ 0, 30, "Any mindless construct" ], // no more than 25% of mech bldg tasks can be filled by constructs
-    "overseer"      : [ .30, 8, "Special Leadership score 3+"]
+    "overseer"      : [ 0.30, 8, "Special Leadership score 3+"]
 };
 
 // high cost: [ 960, 1920, 3840, 7680, 15360, 30720, 61440, 122880, 245760, 491520, 983040, 1966080, 3932160, 7864320 ]
@@ -320,7 +337,7 @@ tgdMech.matCost = {
 
 // step 19 : determine armor cost
 tgdMech.armorCost = {
-    "flesh"     : [ 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00 ],    //undead only
+    "flesh"     : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],    //undead only
     "clay"      : [ 5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480, 40960 ],
     "wood"      : [ 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480, 40960, 81920 ],
     "bone"      : [ 5, 10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480, 40960 ],
@@ -354,5 +371,6 @@ tgdMech.steamPwrResize = {
 
 // step 26 : determine init (pilot-based)
 // Mech init = mech dex mod + pilot dex mod + pilot feats
+
 
 // [ 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00 ]
