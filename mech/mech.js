@@ -18,7 +18,7 @@ bsTemps = { //html templates
         'pop' : function( db ) {
             var ret = '<option value="">Choose</option>';
             $.each( tgdMech[db], function( i,v ){
-                 ret += '<option value="'+i+'">'+v+'</option>';
+                 ret += '\n<option value="'+i+'">'+v+'</option>';
             });
             return ret;
         },

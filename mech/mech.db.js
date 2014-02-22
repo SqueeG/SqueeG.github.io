@@ -37,6 +37,24 @@ tgdMech.mechPS = {      // power source : step 1
     "undead": "Undead"
 };
 
+tgdMech.mechSize = [    // mech size : step 2
+    { "lrg" : "Large"        }, //0
+    { "hug" : "Huge"         }, //1
+    { "ggt" : "Gargantuan"   }, //2
+    { "cl1" : "Colossal"     }, //3
+    { "cl2" : "Colossal II"  }, //4
+    { "cl3" : "Colossal III" }, //5
+    { "cl4" : "Colossal IV"  }, //6
+    { "cl5" : "Colossal V"   }, //7
+    { "cm1" : "City-mech A"  }, //8
+    { "cm2" : "City-mech B"  }, //9
+    { "cm3" : "City-mech C"  }, //10
+    { "cm4" : "City-mech D"  }, //11
+    { "cm5" : "City-mech E"  }, //12
+    { "cm6" : "City-mech F"  }  //13
+];
+
+/*
 tgdMech.mechSize = {    // mech size : step 2
     "lrg" : "Large"       , //0
     "hug" : "Huge"        , //1
@@ -53,7 +71,7 @@ tgdMech.mechSize = {    // mech size : step 2
     "cm5" : "City-mech E" , //12
     "cm6" : "City-mech F"   //13
 };
-/*
+
 tgdMech.mechHD = [      // determine hd : step 3
     { "lrg" : [   6, 0, 6, 4, 5           ] },
     { "hug" : [   12, 10, 12, 8, 10       ] },
@@ -70,6 +88,7 @@ tgdMech.mechHD = [      // determine hd : step 3
     { "cm5" : [   718, 580, 718, 580, 580 ] },
     { "cm6" : [   814, 660, 814, 644, 660 ] }
 ];
+
 
 tgdMech.mechHD = {      // determine hd : step 3
     "lrg" : [   6, 0, 6, 4, 5           ],
@@ -88,6 +107,18 @@ tgdMech.mechHD = {      // determine hd : step 3
     "cm6" : [   814, 660, 814, 644, 660 ]
 };
 */
+
+// good : [ 6, 12, 24, 48, 96, 144, 192, 240, 336, 432, 528, 624, 718, 814 ]
+// mode : [ 5, 10, 20, 40, 80, 120, 160, 200, 280, 340, 420, 500, 580, 660 ]
+// poor : [ 4,  8, 16, 32, 64,  96, 128, 160, 224, 288, 352, 416, 580, 644 ]
+tgdMech.mechHD = {      // determine hd : step 3
+    "steam" : [ 6, 12, 24, 48, 96, 144, 192, 240, 336, 432, 528, 624, 718, 814 ],
+    "man"   : [ 0, 10, 20, 40, 80, 120, 160, 200, 280, 340, 420, 500, 580, 660 ],
+    "clock" : [ 6, 12, 24, 48, 96, 144, 192, 240, 336, 432, 528, 624, 718, 814 ],
+    "animat": [ 4,  8, 16, 32, 64,  96, 128, 160, 224, 288, 352, 416, 580, 644 ],
+    "undead": [ 5, 10, 20, 40, 80, 120, 160, 200, 280, 340, 420, 500, 580, 660 ]
+};
+
 tgdMech.mechSpeed = [   // determine speed : step 4 [ ft, mph ]
     [ 30, 3 ],    //0
     [ 40, 5 ],    //1
@@ -131,14 +162,14 @@ tgdMech.mechManeuver = [    // step 5 : determine maneuverability
 // TH = 'material hardness' + 'hardness by size'
 
 tgdMech.thMat = {    // 7.1 Material Hardness
-    "flesh" : 1,    //undead only
-    "clay"  : 3,
-    "wood"  : 5,
-    "bone"  : 6,
-    "stone" : 8,
-    "iron"  : 10,
-    "steel" : 12,
-    "mithral": 15,
+    "flesh"     : 1,    //undead only
+    "clay"      : 3,
+    "wood"      : 5,
+    "bone"      : 6,
+    "stone"     : 8,
+    "iron"      : 10,
+    "steel"     : 12,
+    "mithral"   : 15,
     "adamantine": 20
 };
 
@@ -165,8 +196,8 @@ tgdMech.critTresh = {   // green, yellow, orange, red
     "steam" : [ 0, 50, 25, 10 ],
     "man"   : [ 0, 60, 35, 20 ],
     "clock" : [ 0, 50, 25, 10 ],
-    "animat": [ 0, 0, 0, 0 ],
-    "undead": [ 0, 0, 0, 0 ]
+    "animat": [ 0,  0,  0,  0 ],
+    "undead": [ 0,  0,  0,  0 ]
 };
 
 // step 9 : determine attacks
