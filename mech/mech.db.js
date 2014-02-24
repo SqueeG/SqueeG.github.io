@@ -403,5 +403,8 @@ tgdMech.steamPwrResize = {
 // step 26 : determine init (pilot-based)
 // Mech init = mech dex mod + pilot dex mod + pilot feats
 
-
+tgdMech.steps = [
+    [ "mechPS", "Power Source" ],
+    [ "mechSize", "Mech Size" ]
+];
 // [ 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00 ]

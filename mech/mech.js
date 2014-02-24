@@ -39,24 +39,45 @@ bsTemps = { //html templates
 };
 
 var mechSheet = function( ps ) {
-    this.ps = ps;   //the power source
+//    this.steps = [ "mechPS", "mechSize", "mechHD", "mechSpeed", "mechManeuver",/* "AC", */ "thMat", "thSize" ];
+    this.step = 0;  //which step you're on
     console.log( ps+'?!! sheet has hit the fan!' );
 
     this.init = function() {
-        var opts = { id : "mechPS", name : "Power Source"   };
+        var tS = tgdMech.steps, s = this.step;
+        var opts = { id : tS[s][0], name : tS[s][1]   };
         opts = bsTemps.form.init( "select", opts );
         $('form').prepend( opts );
         this.wire();
+        this.step++;
     };
     
     this.wire = function(){
-        var _this = this;
+        var _this = this, v = 10, i = 11;
+//        var v, i;
         $('select').change( function(){
-            _this.ps = $(this).val();
-            console.log( $(this).attr('id') +' : '+ _this.ps );
+//            _this.ps = $(this).val();
+            v = $(this).val();
+            i = $(this).attr('id');
+            if( v  !== '' ){
+                _this.set( i, v );
+            }
+            console.log( i +' : '+ _this.ps );
         });  
     };
     
+    this.set = function( i, v ){    //id, value
+        var _this = this;
+        if( _this[i] ){
+            _this[i] = v;
+            console.log( 'existing prop : '+_this[i] );
+        } else {
+            _this[i] = v;
+            _this.init();
+            console.log( 'new prop : '+_this[i] );
+        }
+    };
+   
     this.error = function ( err ){
         err = "<div>Error: "+err+"</div>";
     };
