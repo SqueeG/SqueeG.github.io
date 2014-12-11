@@ -1,6 +1,5 @@
 {
   "ignore": [
-    "**/bootstrap*.js",
-    "**/autosize*.js"
+    "**/vendor/**"
   ]
 }
